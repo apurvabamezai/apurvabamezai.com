@@ -20,9 +20,6 @@ menus:
     - name: Teaching
       url: /teaching/
       weight: 4
-    - name: News
-      url: /news/
-      weight: 5
 
 # Build settings
 markup:
