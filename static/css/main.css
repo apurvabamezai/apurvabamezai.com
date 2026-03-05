@@ -727,6 +727,13 @@ img {
    ========================================================================== */
 
 @media (max-width: 768px) {
+  .banner-image,
+  .banner-image img {
+    max-height: 140px;
+    height: 140px;
+    object-position: center 55%;
+  }
+
   .nav-toggle {
     display: block;
   }
