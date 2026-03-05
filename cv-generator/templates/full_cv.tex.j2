@@ -107,7 +107,7 @@
 <% for pub in cv.publications.works_in_progress %>
   \item << pub.authors | replace("Bamezai, Apurva", "\\textbf{Bamezai, Apurva}") | replace("Apurva Bamezai", "\\textbf{Apurva Bamezai}") >>.
   << pub.title >>.
-  <% if pub.status >><< pub.status >>.<% endif %>
+  <% if pub.status %><< pub.status >>.<% endif %>
   <% if pub.url %>Available at: \href{<< pub.url >>}{<< pub.url >>}.<% endif %>
 <% endfor %>
 \end{enumerate}
@@ -166,7 +166,7 @@
   \item << pub.authors | replace("Bamezai, Apurva", "\\textbf{Bamezai, Apurva}") | replace("Apurva Bamezai", "\\textbf{Apurva Bamezai}") >>.
   << pub.title >>.
   \textit{<< pub.venue >>}, << pub.year >>.
-  <% if pub.note >><< pub.note >>.<% endif %>
+  <% if pub.note %><< pub.note >>.<% endif %>
 <% endfor %>
 \end{enumerate}
 
