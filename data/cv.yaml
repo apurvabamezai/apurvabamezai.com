@@ -1,0 +1,492 @@
+# =============================================================================
+# CV DATA — Single Source of Truth
+# =============================================================================
+# This file drives both the website AND the PDF CV.
+# Edit this file, push to GitHub, and everything updates automatically.
+#
+# TIPS:
+#   - Use quotes around text that contains colons, e.g. "Title: Subtitle"
+#   - Dates use the format "2019--25" for ranges (LaTeX en-dash) or "2024"
+#   - To add a new publication, copy an existing entry and modify it
+#   - Fields marked (optional) can be deleted if not needed
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# PERSONAL INFORMATION
+# -----------------------------------------------------------------------------
+personal:
+  name: Apurva Bamezai
+  # Email displayed on website and CV (use [at] and [dot] in CV for spam protection)
+  email: ABamezai@nd.edu
+  website: https://www.apurvabamezai.com
+  # Current position — shown prominently on homepage hero
+  position: Postdoctoral Visiting Fellow
+  institution: Kellogg Institute for International Studies, University of Notre Dame
+  # Shown below institution on homepage hero (remove or update when you start at Ashoka)
+  upcoming_position: "Incoming Assistant Professor of Political Science, Ashoka University (August 2026)"
+  # Mailing address for CV header
+  address: ""
+  # Social / academic profile links (leave blank to hide)
+  orcid: ""
+  google_scholar: ""
+  linkedin: ""
+  github: ""
+  twitter: ""
+  bluesky: ""
+
+
+# -----------------------------------------------------------------------------
+# SHORT BIO (for website homepage hero section)
+# -----------------------------------------------------------------------------
+bio:
+  # 1-2 sentence version for the hero area
+  short: >
+    I am a Postdoctoral Visiting Fellow at the Kellogg Institute for International
+    Studies, University of Notre Dame. I will join Ashoka University as an Assistant
+    Professor of Political Science in August 2026.
+
+  # Full bio for the About section — stored as HTML to preserve hyperlinks.
+  # To edit: change text/URLs below. Hugo renders this with safeHTML.
+  long_html: |
+    <p>I am a Postdoctoral Visiting Fellow at <a href="https://kellogg.nd.edu/" target="_blank" rel="noopener">Kellogg Institute for International Studies, Keough School of Global Affairs, University of Notre Dame</a>. I will join <a href="https://www.ashoka.edu.in/department/department-of-political-science/" target="_blank" rel="noopener">Ashoka University</a> as an Assistant Professor of Political Science in August 2026.</p>
+
+    <p>I hold a PhD in Political Science from <a href="https://www.polisci.upenn.edu/" target="_blank" rel="noopener">University of Pennsylvania</a>. While at Penn, I was also affiliated to the <a href="https://casi.sas.upenn.edu/" target="_blank" rel="noopener">Center for Advanced Study of India</a> and the <a href="https://pdri-devlab.upenn.edu/" target="_blank" rel="noopener">Penn Development Research Initiative (PDRI) - DevLab@Penn</a>. My work is forthcoming in the Journal of Development Economics.</p>
+
+    <p>My main research interests include political selection, bureaucracy and public goods provision, with a regional focus on India. My current research agenda is centered on political entry in rural local government in India. My dissertation project looks at public sector employment as a pathway to local electoral politics. I am also collaborating with researchers on projects to (i) establish who becomes a politician using census data on citizens and the universe of candidates in village-council elections, (ii) evaluate the impact of peer networks for local politicians, and (iii) examine the effectiveness of gender quotas in terms of women exercising de facto political leadership. My current projects are all based in the state of Bihar (where I have conducted research consistently since 2011). In my research projects, I employ both quantitative and qualitative methods.</p>
+
+    <p>My research projects have been funded by the <a href="https://bfi.uchicago.edu/the-weiss-fund/" target="_blank" rel="noopener">Weiss Fund for Research in Development Economics</a>, <a href="https://www.povertyactionlab.org/initiative/governance-initiative" target="_blank" rel="noopener">J-PAL's Governance Initiative</a>, the <a href="https://www.theigc.org/" target="_blank" rel="noopener">International Growth Centre (IGC)</a>, <a href="https://casi.sas.upenn.edu/studentprograms/sobtifamilyfellowshipfund" target="_blank" rel="noopener">Sobti Family Fellowship (CASI)</a>, <a href="https://pdri-devlab.upenn.edu/" target="_blank" rel="noopener">Penn Development Research Initiative (PDRI) - DevLab@Penn</a>, <a href="https://cseri.sas.upenn.edu/" target="_blank" rel="noopener">Center for the Study of Ethnicity, Race, and Immigration</a>, <a href="https://bc.sas.upenn.edu/" target="_blank" rel="noopener">Christopher H. Browne Center for International Politics</a>, Judith Rodin Fellowship and the SAS Dissertation Research Award.</p>
+
+    <p>Prior to entering the PhD program, I worked in development research and the public policy space for over eight years, mainly conducting mixed-methods impact evaluations and process assessments of government programs in India with a focus on governance and service delivery in the realms of social protection, nutrition, and early childhood education interventions. Right before arriving at Penn, I worked as a Senior Researcher on a <a href="https://casi.sas.upenn.edu/" target="_blank" rel="noopener">CASI</a> research project related to urbanization and female labor force participation in northern India. I have also worked as a researcher in <a href="https://www.opml.co.uk/" target="_blank" rel="noopener">Oxford Policy Management</a>&rsquo;s Poverty and Social Protection portfolio; <a href="https://www.idinsight.org/" target="_blank" rel="noopener">IDinsight</a>; and the Poverty, Health, and Nutrition Division of the <a href="https://www.ifpri.org/" target="_blank" rel="noopener">International Food Policy Research Institute</a> in New Delhi.</p>
+
+    <p>I was awarded a full scholarship by the Cambridge Commonwealth Trust to pursue an MPhil in Development Studies from the <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener">University of Cambridge</a>. Before this, I received an MA in Development Studies from the <a href="https://www.tiss.edu/" target="_blank" rel="noopener">Tata Institute of Social Sciences</a>, Mumbai, and a BA (Honours) in Economics from <a href="https://www.ststephens.edu/" target="_blank" rel="noopener">St. Stephen's College, Delhi University</a>.</p>
+
+
+# -----------------------------------------------------------------------------
+# RESEARCH FIELDS (displayed on homepage and CV)
+# -----------------------------------------------------------------------------
+research_fields:
+  - Political economy
+  - Governance
+  - Decentralization
+  - Political selection
+  - Bureaucracy
+  - Gender and politics
+  - India
+
+
+# -----------------------------------------------------------------------------
+# EDUCATION
+# -----------------------------------------------------------------------------
+# Each entry: degree, institution, location, years, and optional details
+education:
+  - degree: Ph.D. in Political Science
+    institution: University of Pennsylvania
+    location: Philadelphia, USA
+    years: "2019--25"
+    subfield: Comparative Politics   # used in extended CV
+    details:
+      - "Committee: Tariq Thachil (chair), Guy Grossman, Marc Meredith"
+      - "Dissertation title: *Essays on Political Selection and Local Governance in Rural India*"
+      - Distinction in Comparative Politics comprehensive field exam
+
+  - degree: M.Phil. in Development Studies
+    institution: University of Cambridge
+    location: Cambridge, UK
+    years: "2011--12"
+    details: []
+
+  - degree: M.A. in Development Studies
+    institution: Tata Institute of Social Sciences
+    location: Mumbai, India
+    years: "2008--10"
+    details: []
+
+  - degree: "B.A. (Honours) Economics"
+    institution: "University of Delhi, St. Stephen's College"
+    location: Delhi, India
+    years: "2005--08"
+    details: []
+
+
+# -----------------------------------------------------------------------------
+# PUBLICATIONS — Peer Reviewed
+# -----------------------------------------------------------------------------
+# Fields:
+#   authors     — full author list (your name will be bolded automatically)
+#   title       — paper title
+#   journal     — journal name (italicized in output)
+#   year        — publication year
+#   status      — e.g. "published", "accepted", "forthcoming"
+#   url         — link to paper (optional)
+#   abstract    — short abstract for website expandable section (optional)
+#   note        — any additional note (optional)
+publications:
+  peer_reviewed:
+    - authors: "Bamezai, Apurva, Siddharth George, Siddharth Hari, and M. R. Sharan"
+      title: "Learning to Govern: The Impact of Politicians' Peer Networks"
+      journal: Journal of Development Economics
+      year: 2025
+      status: "accepted in the pre-results review track"
+      url: "https://ssrn.com/abstract=4664964"
+      abstract: >
+        This paper studies whether peer networks among politicians affect governance
+        outcomes. We conduct a large-scale randomized experiment among newly elected
+        village council presidents in the Indian state of Bihar.
+      note: ""
+
+    - authors: "Menon, Purnima, Apurva Bamezai, Ali Subandoro, Mohamed A. Ayoya, and Victor M. Aguayo"
+      title: "Age-appropriate Infant and Young Child Feeding Practices Are Associated with Child Nutrition in India: Insights from Nationally Representative Data"
+      journal: "Maternal & Child Nutrition"
+      year: 2015
+      status: published
+      url: ""
+      volume: "11(1):73--87"
+      abstract: ""
+      note: ""
+
+  # ---------------------------------------------------------------------------
+  # WORKS IN PROGRESS / UNDER REVIEW
+  # ---------------------------------------------------------------------------
+  works_in_progress:
+    - authors: "Bamezai, Apurva"
+      title: "Public Sector Employment as a Pathway to Local Electoral Politics? Evidence from Rural India"
+      status: Dissertation paper
+      url: ""
+      abstract: ""
+      note: ""
+
+    - authors: "Amar, Priyadarshi, Apurva Bamezai, and Rithika Kumar"
+      title: "Mere Proxies or Genuine Leaders? Women in Local Politics in the Context of Gender Quotas"
+      status: ""
+      url: "https://ssrn.com/abstract=5200785"
+      abstract: ""
+      note: ""
+
+    - authors: "Bamezai, Apurva, Siddharth George, M. R. Sharan, and Borui Sun"
+      title: "Who Becomes a Local Politician? Evidence from Rural India"
+      status: Working paper
+      url: ""
+      abstract: ""
+      note: ""
+
+    - authors: "Bamezai, Apurva, Murad Banaji, Aashish Gupta, Shivani Pandey, M. R. Sharan, Kanika Sharma, and Chanchal Kumar Singh"
+      title: "Survey Evidence of Excess Mortality in Bihar in the Second COVID-19 Surge"
+      status: "SocArXiv, 2021"
+      url: ""
+      abstract: ""
+      note: ""
+
+  # ---------------------------------------------------------------------------
+  # POLICY WRITING (select)
+  # ---------------------------------------------------------------------------
+  policy_writing:
+    - authors: "Bamezai, Apurva and M. R. Sharan"
+      title: "The Particulars of Social Policy in India: Evidence, State Capacity, and Policy Design"
+      venue: "Ideas for India"
+      year: 2018
+      url: ""
+      note: "12 September 2018"
+
+    - authors: "Bamezai, Apurva, M. Jagmag, N. Kumar, P. V. Singh, P. Joshi, S. Joshi, S. Viswanathan, T. Newton-Lewis, and V. Grover"
+      title: "Bihar Child Support Programme Midline Impact Evaluation Report"
+      venue: "New Delhi: Oxford Policy Management"
+      year: 2016
+      url: ""
+      note: "Report submitted to DFID India in March 2016"
+
+    - authors: "Ali, D., M. Tedla, A. Subandoro, Apurva Bamezai, R. Rawat, and P. Menon"
+      title: "Alive & Thrive Baseline Survey Report: Ethiopia"
+      venue: "Washington, D.C.: Alive & Thrive"
+      year: 2011
+      url: ""
+      note: ""
+
+
+# -----------------------------------------------------------------------------
+# AWARDS, GRANTS & FUNDING
+# -----------------------------------------------------------------------------
+# Grouped into project grants (with sub-items) and individual awards
+awards:
+  # Large project grants with multiple funders
+  project_grants:
+    - project: "Fostering Peer Learning Among Local Elected Representatives"
+      funders:
+        - name: The Weiss Fund
+          amount: "$93,427"
+          years: "2022--23"
+        - name: J-PAL Governance Initiative
+          amount: "$169,510"
+          years: "2022--23"
+        - name: International Growth Centre
+          amount: "$82,000"
+          years: "2023--24"
+
+    - project: "Understanding COVID-19-Induced Excess Mortality in Bihar"
+      funders:
+        - name: "University of Pennsylvania Institute for the Advanced Study of India & Penn Global"
+          amount: "$46,000"
+          years: "2021"
+
+  # Individual fellowships and awards
+  individual:
+    - name: SAS Dissertation Research Award, University of Pennsylvania
+      amount: "$5,000"
+      years: "2024"
+    - name: Judith Rodin Fellowship, University of Pennsylvania
+      amount: "$5,000"
+      years: "2023"
+    - name: "Turner Schulman Graduate Fellowship, Center for the Study of Ethnicity, Race and Immigration, University of Pennsylvania"
+      amount: "$2,000"
+      years: "2022"
+    - name: Penn Development Research Institute Graduate Student Research Grant
+      amount: "$2,000"
+      years: "2022"
+    - name: Browne Center for International Politics Research Grant, University of Pennsylvania
+      amount: "$1,500"
+      years: "2022"
+    - name: Political Science Department Graduate Research Grant, University of Pennsylvania
+      amount: "$1,500"
+      years: "2022"
+    - name: GAPSA-Provost Fellowship Award, University of Pennsylvania
+      amount: "$6,000"
+      years: "2022"
+    - name: Presidential Graduate Fellowship, University of Pennsylvania
+      amount: ""
+      years: "2020--21"
+    - name: Sobti Family Fellowship, Center for the Advanced Study of India
+      amount: "$12,500"
+      years: "2020--21"
+    - name: Benjamin Franklin Fellowship, University of Pennsylvania
+      amount: ""
+      years: "2019--24"
+    - name: Cambridge Commonwealth Shared Scholarship
+      amount: ""
+      years: "2011--12"
+    - name: ETS TOEFL Scholarship (India)
+      amount: ""
+      years: "2011--12"
+    - name: J. N. Tata Scholarship (India)
+      amount: ""
+      years: "2011--12"
+    - name: Indira Gandhi Scholarship for Post-Graduate Studies (Govt. of India)
+      amount: ""
+      years: "2008--10"
+    - name: Central Board of Secondary Education (CBSE) Scholarship (Govt. of India)
+      amount: ""
+      years: "2005--08"
+
+
+# -----------------------------------------------------------------------------
+# ACADEMIC POSITIONS
+# -----------------------------------------------------------------------------
+academic_positions:
+  - title: Postdoctoral Fellow
+    institution: Kellogg Institute for International Studies, University of Notre Dame
+    location: Notre Dame, USA
+    years: "2025--"
+
+
+# -----------------------------------------------------------------------------
+# PROFESSIONAL POSITIONS
+# -----------------------------------------------------------------------------
+professional_positions:
+  - title: Short-Term Consultant
+    institution: The World Bank
+    location: ""
+    years: "2023, 2025"
+    # Detailed bullets for extended/non-academic CV (omitted in short academic CV)
+    details:
+      - "Multi-sectoral Nutrition Convergence Impact Evaluation, Lao PDR (Jan--Feb 2023)"
+      - "Conducted the midline impact evaluation analysis and prepared the presentation for the project review."
+      - "The intervention involved a conditional cash transfer as part of Reducing Rural Poverty and Malnutrition (RRPM) Project along with World Bank's Health and Nutrition Services Access Project (HANSA); the Poverty Reduction Fund (PRFIII-AF) and the Scaling-up Water Supply, Sanitation and Hygiene (SWSSH) Project."
+
+  - title: Senior Researcher
+    institution: Center for the Advanced Study of India, University of Pennsylvania
+    location: New Delhi, India
+    years: "2018--19"
+    details:
+      - "Engaged in design and analysis for a series of quantitative research projects furnished by Center for Advanced Study of India (University of Pennsylvania), including research on female labor force participation, urbanization, and agricultural markets funded by the Ford Foundation and Gates Foundation."
+
+  - title: Consultant
+    institution: Oxford Policy Management, New Delhi
+    location: ""
+    years: "2013--18"
+    # Was Assistant Consultant Nov 2013 -- Sep 2015, then Consultant Oct 2015 -- Jun 2018
+    prior_title: "Assistant Consultant, November 2013 -- September 2015"
+    details:
+      - "Worked on a World Bank funded project to provide technical support for the design and operationalization of a maternal and child health conditional cash transfer scheme in Madhya Pradesh."
+      - "Co-managed a large quantitative impact evaluation and a process evaluation of the DFID funded Bihar Child Support Programme (a conditional cash transfer pilot in Gaya district, Bihar within the ICDS scheme architecture)."
+      - "Worked on the evaluation design, development of survey instruments and data collection for a World Bank funded study on Early Childhood Care and Education in Madhya Pradesh, as well as a DFID supported study evaluating a program on microfinance innovations in multiple states."
+      - "Managed a World Bank funded process evaluation of Janani Suraksha Yojana and Nutritional Rehabilitation Centre programmes in Madhya Pradesh."
+      - "Engaged in a World Bank funded social protection survey in Odisha."
+      - "Worked on a midline assessment (using qualitative methods) of UNICEF's program for ensuring children's right to quality education and protection in Jammu and Kashmir."
+
+  - title: Associate
+    institution: IDinsight, Patna
+    location: ""
+    years: "2012--13"
+    details:
+      - "Rigorous quantitative research, analysis, and impact evaluations (including primary data collection across rural Bihar) of interventions to improve service delivery through ICDS and MGNREGA in Bihar."
+      - "Developed survey instruments and managed field staff in Gaya district for a baseline survey (funded by IGC) as part of an impact evaluation (RCT) to test a policy intervention to improve ICDS Supplementary Nutrition Program delivery."
+      - "Liaised with bureaucrats at the Department of Social Welfare, ICDS Directorate and development partners in Bihar to initiate work on a technology-based monitoring system for ICDS functionaries."
+      - "Developed survey instruments and managed field work for a rapid evaluation of MGNREGA Diwas (funded by IGC), an initiative of Department of Rural Development, Government of Bihar."
+
+  - title: Research Analyst
+    institution: International Food Policy Research Institute (IFPRI), New Delhi
+    location: ""
+    years: "2010--11"
+    division: "Poverty, Health and Nutrition Division"
+    details:
+      - "Research focus on examining linkages between agriculture, safety nets, food security and nutrition, and impact evaluation of direct nutrition and anti-poverty interventions."
+      - "Analyzed trends and determinants of nutritional status among children and infant and child feeding (IYCF) practices in India using NFHS data as part of an IFPRI--UNICEF India collaboration."
+      - "Conducted survey data analysis for the Alive and Thrive project (a Bill and Melinda Gates Foundation initiative in Viet Nam, Bangladesh & Ethiopia), and Global Alliance for Improving Nutrition (GAIN)."
+      - "Worked on an IFPRI--J-PAL collaboration to gather pilot data to inform innovations to improve governance and service provision related to health and nutrition in Bihar."
+
+  - title: Research Assistant
+    institution: Tata Institute of Social Sciences, Mumbai
+    location: ""
+    years: "2010"
+    details:
+      - "Analyzed primary household level village data for a project titled 'Contested Rural Development' aimed at understanding long-term agrarian change in rural Maharashtra, sponsored by the University of Zurich."
+
+
+# -----------------------------------------------------------------------------
+# TEACHING
+# -----------------------------------------------------------------------------
+teaching:
+  role: "Teaching Assistant, University of Pennsylvania"
+  courses:
+    - name: The Public Policy Process
+      instructor: Prof. Julia Lynch
+      semester: Spring 2022
+    - name: Comparative Politics of Developing Areas
+      instructor: Prof. Rudra Sil
+      semester: Fall 2021
+    - name: The Public Policy Process
+      instructor: Prof. Marc Meredith
+      semester: Spring 2021
+    - name: International Political Economy
+      instructor: Prof. Mark A. Pollack
+      semester: Fall 2020
+  training:
+    - "Completed training in Structured Active In-Class Learning (SAIL), Spring 2022"
+
+
+# -----------------------------------------------------------------------------
+# CONFERENCES & WORKSHOPS
+# -----------------------------------------------------------------------------
+conferences:
+  - name: Indian Statistical Institute Annual Conference on Economic Growth & Development
+    location: New Delhi
+    year: 2024
+  - name: APSA Annual Conference
+    location: Philadelphia
+    year: 2024
+  - name: MPSA Annual Conference
+    location: Chicago
+    year: 2024
+  - name: MPSA Annual Conference
+    location: Chicago
+    year: 2022
+  - name: Comparative Politics Workshop, University of Pennsylvania
+    location: ""
+    year: "Fall 2024"
+  - name: PDRI-DevLab Workshop, University of Pennsylvania
+    location: ""
+    year: "Fall 2023, Fall 2024"
+
+
+# -----------------------------------------------------------------------------
+# ACADEMIC SERVICE
+# -----------------------------------------------------------------------------
+service:
+  - role: Discussant
+    event: PDRI-DevLab Political Economy of Development Conference
+    year: Spring 2024
+  - role: Participant
+    event: "NEWEPS-22, Princeton University"
+    year: Spring 2024
+  - role: Participant
+    event: "NEWEPS-18, New York University"
+    year: Spring 2022
+
+
+# -----------------------------------------------------------------------------
+# INTERNSHIPS & VOLUNTEER WORK
+# -----------------------------------------------------------------------------
+internships:
+  - role: "Team Co-Lead"
+    organization: "CURE: COVID-19 Urgent Response Effort, India (remotely from the U.S.)"
+    period: Summer 2020
+  - role: ""
+    organization: Sahpathi Programme, Jharkhand
+    period: "May--July 2016; June--July 2017"
+  - role: ""
+    organization: Institute for Human Development, New Delhi
+    period: "May--June 2009"
+  - role: ""
+    organization: Centre for Development Economics, Delhi School of Economics, New Delhi
+    period: May 2007
+  - role: ""
+    organization: Centre for Budget and Governance Accountability, New Delhi
+    period: May 2006
+
+
+# -----------------------------------------------------------------------------
+# SKILLS
+# -----------------------------------------------------------------------------
+skills:
+  technical:
+    - Stata
+    - R
+    - ODK
+    - SurveyCTO
+    - LaTeX
+  # Additional skills included in extended/non-academic CV only
+  technical_extended:
+    - SPSS
+    - Microsoft Office
+  languages:
+    - language: Hindi
+      proficiency: Native
+    - language: English
+      proficiency: Native
+    - language: Urdu
+      proficiency: Limited working
+    - language: Kashmiri
+      proficiency: Elementary
+  courses:
+    - "MUSA 2020 Summer Spatial Analysis Bootcamp (Penn Institute for Urban Research)"
+    - "Problem-Driven Iterative Adaptation (Building State Capability program, Center for International Development, Harvard Kennedy School)"
+
+
+# -----------------------------------------------------------------------------
+# RESEARCH ASSISTANTSHIPS (included in extended CV)
+# -----------------------------------------------------------------------------
+research_assistantships:
+  - project: Voting Aggregation Project
+    principal_investigators: "Guy Grossman and Miguel Rueda"
+    period: "Jan 2020 -- Sep 2020"
+    role: Research Assistant
+
+
+# -----------------------------------------------------------------------------
+# FIELDWORK
+# -----------------------------------------------------------------------------
+fieldwork:
+  india:
+    - Bihar
+    - Jharkhand
+    - Madhya Pradesh
+    - Jammu & Kashmir
+    - Ladakh
+    - Maharashtra
+    - Uttar Pradesh
+    - Rajasthan
+    - Andhra Pradesh
+    - Haryana
+    - Odisha
+  outside_india:
+    - Bangladesh
+    - Mongolia

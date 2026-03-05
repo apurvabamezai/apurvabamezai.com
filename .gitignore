@@ -1,0 +1,29 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# LaTeX temp files
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# Node (if you ever add npm packages)
+node_modules/

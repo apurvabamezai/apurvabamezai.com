@@ -1,0 +1,111 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% Colors
+\definecolor{navyblue}{HTML}{1a2744}
+\definecolor{darkgrey}{HTML}{555555}
+
+% Hyperlinks
+\hypersetup{
+  colorlinks=true,
+  urlcolor=navyblue,
+  linkcolor=navyblue
+}
+
+% Compact section formatting
+\titleformat{\section}
+  {\normalsize\scshape\color{navyblue}}
+  {}
+  {0em}
+  {}
+  [\titlerule]
+
+\titlespacing*{\section}{0pt}{0.9em}{0.4em}
+
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.5em, itemsep=0pt, parsep=1pt, topsep=1pt}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% ---- HEADER ----
+\begin{center}
+  {\Large\scshape << cv.personal.name >>}\\[4pt]
+  {\small
+    << cv.personal.position >> $\cdot$
+    << cv.personal.institution >>\\
+    << cv.personal.email >> $\cdot$
+    \href{<< cv.personal.website >>}{<< cv.personal.website | replace("https://", "") >>}
+  }
+\end{center}
+
+\vspace{0.2em}
+
+% ---- EDUCATION ----
+\section*{Education}
+<% for edu in cv.education %>
+\textbf{<< edu.degree >>}, << edu.institution >> \hfill << edu.years >>\\[2pt]
+<% endfor %>
+
+% ---- CURRENT POSITION ----
+<% if cv.academic_positions %>
+\section*{Current Position}
+<% for pos in cv.academic_positions %>
+\textbf{<< pos.title >>}, << pos.institution >> \hfill << pos.years >>\\[2pt]
+<% endfor %>
+<% endif %>
+
+% ---- RESEARCH FIELDS ----
+\section*{Research Fields}
+<< cv.research_fields | join(", ") >>
+
+% ---- SELECTED PUBLICATIONS ----
+\section*{Selected Publications}
+\begin{enumerate}[leftmargin=1.5em]
+<% for pub in cv.publications.peer_reviewed %>
+  \item << pub.authors | replace("Bamezai, Apurva", "\\textbf{Bamezai, Apurva}") | replace("Apurva Bamezai", "\\textbf{Apurva Bamezai}") >>.
+  << pub.title >>.
+  \textit{<< pub.journal >>}<% if pub.year %>, << pub.year >><% endif %>.
+  <% if pub.status %>(<< pub.status >>)<% endif %>
+<% endfor %>
+\end{enumerate}
+
+% ---- PROFESSIONAL EXPERIENCE (with details from extended CV) ----
+\section*{Professional Experience}
+<% for pos in cv.professional_positions %>
+\textbf{<< pos.title >>}, << pos.institution >> \hfill << pos.years >>
+<% if pos.details %>
+\begin{itemize}
+<% for bullet in pos.details[:2] %>
+  \item {\small << bullet >>}
+<% endfor %>
+\end{itemize}
+<% endif %>
+<% endfor %>
+
+% ---- SELECTED AWARDS ----
+\section*{Selected Awards \& Grants}
+<% for grant in cv.awards.project_grants %>
+<% for funder in grant.funders %>
+<< funder.name >>: << grant.project >> (<< funder.amount >>) \hfill << funder.years >>\\[2pt]
+<% endfor %>
+<% endfor %>
+<% for award in cv.awards.individual[:5] %>
+<< award.name >><% if award.amount %> (<< award.amount >>)<% endif %> \hfill << award.years >>\\[2pt]
+<% endfor %>
+
+% ---- SKILLS ----
+\section*{Skills}
+\textbf{Technical:} << cv.skills.technical | join(", ") >><% if cv.skills.technical_extended %>, << cv.skills.technical_extended | join(", ") >><% endif %>\\
+\textbf{Languages:} <% for lang in cv.skills.languages %><< lang.language >> (<< lang.proficiency >>)<% if not loop.last %>; <% endif %><% endfor %>
+
+\end{document}

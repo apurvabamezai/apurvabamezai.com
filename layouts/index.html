@@ -1,0 +1,108 @@
+{{ define "main" }}
+{{ $cv := .Site.Data.cv }}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-photo">
+      <img src="/img/profile-placeholder.jpg" alt="Photo of {{ $cv.personal.name }}">
+    </div>
+    <div class="hero-text">
+      <h1>{{ $cv.personal.name }}</h1>
+      <p class="hero-position">{{ $cv.personal.position }}</p>
+      <p class="hero-institution">{{ $cv.personal.institution }}</p>
+      {{ with $cv.personal.upcoming_position }}<p class="hero-upcoming">{{ . }}</p>{{ end }}
+      <div class="hero-links">
+        {{ with $cv.personal.email }}<a href="mailto:{{ . }}" class="hero-link">Email</a>{{ end }}
+        {{ with $cv.personal.google_scholar }}<a href="{{ . }}" target="_blank" rel="noopener" class="hero-link">Google Scholar</a>{{ end }}
+        {{ with $cv.personal.orcid }}<a href="https://orcid.org/{{ . }}" target="_blank" rel="noopener" class="hero-link">ORCID</a>{{ end }}
+        {{ with $cv.personal.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" class="hero-link">LinkedIn</a>{{ end }}
+        {{ with $cv.personal.twitter }}<a href="{{ . }}" target="_blank" rel="noopener" class="hero-link">Twitter</a>{{ end }}
+        {{ with $cv.personal.bluesky }}<a href="{{ . }}" target="_blank" rel="noopener" class="hero-link">Bluesky</a>{{ end }}
+        <a href="/files/Bamezai_CV.pdf" class="hero-link">CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <div class="about-text">
+      {{ $cv.bio.long_html | safeHTML }}
+    </div>
+  </div>
+</section>
+
+<!-- Research Fields -->
+<section class="section section-alt" id="research-interests">
+  <div class="container">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="field-tags">
+      {{ range $cv.research_fields }}
+      <span class="field-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Selected Publications -->
+<section class="section" id="publications">
+  <div class="container">
+    <h2 class="section-title">Selected Publications</h2>
+
+    <h3 class="subsection-title">Peer-Reviewed Articles</h3>
+    <ol class="publication-list" reversed>
+      {{ range $cv.publications.peer_reviewed }}
+      <li class="publication-item">
+        <div class="pub-text">
+          <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+          {{ .title }}.
+          <em>{{ .journal }}</em>{{ with .volume }}, {{ . }}{{ end }}{{ with .year }}, {{ . }}{{ end }}.
+          {{ with .status }}<span class="pub-status">({{ . }})</span>{{ end }}
+        </div>
+        <div class="pub-links">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Paper</a>{{ end }}
+        </div>
+        {{ with .abstract }}
+        <div class="pub-abstract-toggle">
+          <button class="abstract-btn" aria-expanded="false">Abstract <span class="arrow">&raquo;</span></button>
+          <div class="pub-abstract" hidden>
+            <p>{{ . }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <h3 class="subsection-title">Works in Progress</h3>
+    <ol class="publication-list" reversed>
+      {{ range $cv.publications.works_in_progress }}
+      <li class="publication-item">
+        <div class="pub-text">
+          <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+          {{ .title }}.
+          {{ with .status }}<span class="pub-status">{{ . }}.</span>{{ end }}
+        </div>
+        <div class="pub-links">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Paper</a>{{ end }}
+        </div>
+        {{ with .abstract }}
+        <div class="pub-abstract-toggle">
+          <button class="abstract-btn" aria-expanded="false">Abstract <span class="arrow">&raquo;</span></button>
+          <div class="pub-abstract" hidden>
+            <p>{{ . }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <p class="section-more"><a href="/research/">View all publications &rarr;</a></p>
+  </div>
+</section>
+
+{{ end }}

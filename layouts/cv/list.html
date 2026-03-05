@@ -1,0 +1,179 @@
+{{ define "main" }}
+{{ $cv := .Site.Data.cv }}
+
+<section class="section page-section">
+  <div class="container">
+    <div class="cv-header">
+      <h1 class="page-title">Curriculum Vitae</h1>
+      <a href="/files/Bamezai_CV.pdf" class="btn btn-primary" target="_blank">Download PDF</a>
+    </div>
+
+    <!-- Academic Positions -->
+    {{ with $cv.academic_positions }}
+    <h2 class="cv-section-title">Academic Positions</h2>
+    {{ range . }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">
+        <strong>{{ .title }}</strong><br>
+        <em>{{ .institution }}</em>
+      </div>
+      <div class="cv-entry-date">{{ replace .years "--" "&ndash;" | safeHTML }}</div>
+    </div>
+    {{ end }}
+    {{ end }}
+
+    <!-- Education -->
+    <h2 class="cv-section-title">Education</h2>
+    {{ range $cv.education }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">
+        <strong>{{ .degree }}</strong><br>
+        <em>{{ .institution }}</em>{{ with .location }}, {{ . }}{{ end }}
+        {{ range .details }}
+        <div class="cv-detail">{{ . | markdownify }}</div>
+        {{ end }}
+      </div>
+      <div class="cv-entry-date">{{ replace .years "--" "&ndash;" | safeHTML }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Research Fields -->
+    <h2 class="cv-section-title">Research Fields</h2>
+    <p>{{ delimit $cv.research_fields ", " }}</p>
+
+    <!-- Publications: Peer Reviewed -->
+    <h2 class="cv-section-title">Peer-Reviewed Articles</h2>
+    <ol class="publication-list cv-pub-list" reversed>
+      {{ range $cv.publications.peer_reviewed }}
+      <li class="publication-item">
+        <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+        {{ .title }}.
+        <em>{{ .journal }}</em>{{ with .volume }}, {{ . }}{{ end }}{{ with .year }}, {{ . }}{{ end }}.
+        {{ with .status }}<span class="pub-status">({{ . }})</span>{{ end }}
+        {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Paper</a>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <!-- Works in Progress -->
+    <h2 class="cv-section-title">Works in Progress / Under Review</h2>
+    <ol class="publication-list cv-pub-list" reversed>
+      {{ range $cv.publications.works_in_progress }}
+      <li class="publication-item">
+        <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+        {{ .title }}.
+        {{ with .status }}<span class="pub-status">{{ . }}.</span>{{ end }}
+        {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Paper</a>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <!-- Awards -->
+    <h2 class="cv-section-title">Awards, Grants &amp; Funding</h2>
+    {{ range $cv.awards.project_grants }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">
+        <strong>{{ .project }}</strong>
+        {{ range .funders }}
+        <div class="cv-detail">&ndash; {{ .name }}{{ with .amount }} ({{ . }}){{ end }}</div>
+        {{ end }}
+      </div>
+      <div class="cv-entry-date">
+        {{ range .funders }}
+        <div>{{ replace .years "--" "&ndash;" | safeHTML }}</div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ range $cv.awards.individual }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">{{ .name }}{{ with .amount }} ({{ . }}){{ end }}</div>
+      <div class="cv-entry-date">{{ replace .years "--" "&ndash;" | safeHTML }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Professional Positions -->
+    <h2 class="cv-section-title">Professional Positions</h2>
+    {{ range $cv.professional_positions }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">
+        <strong>{{ .title }}</strong><br>
+        <em>{{ .institution }}</em>
+      </div>
+      <div class="cv-entry-date">{{ replace .years "--" "&ndash;" | safeHTML }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Teaching -->
+    <h2 class="cv-section-title">Teaching</h2>
+    <p><strong>{{ $cv.teaching.role }}</strong></p>
+    {{ range $cv.teaching.courses }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">{{ .name }} (for {{ .instructor }})</div>
+      <div class="cv-entry-date">{{ .semester }}</div>
+    </div>
+    {{ end }}
+    {{ range $cv.teaching.training }}
+    <div class="cv-detail">{{ . }}</div>
+    {{ end }}
+
+    <!-- Conferences -->
+    <h2 class="cv-section-title">Conferences &amp; Workshops</h2>
+    {{ range $cv.conferences }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">{{ .name }}{{ with .location }}, {{ . }}{{ end }}</div>
+      <div class="cv-entry-date">{{ .year }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Service -->
+    <h2 class="cv-section-title">Service</h2>
+    {{ range $cv.service }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">{{ .event }} ({{ .role }})</div>
+      <div class="cv-entry-date">{{ .year }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Policy Writing -->
+    <h2 class="cv-section-title">Select Policy Writing</h2>
+    <ol class="publication-list cv-pub-list" reversed>
+      {{ range $cv.publications.policy_writing }}
+      <li class="publication-item">
+        <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+        {{ .title }}.
+        <em>{{ .venue }}</em>, {{ .year }}.
+        {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Link</a>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <!-- Internships -->
+    <h2 class="cv-section-title">Internships &amp; Volunteer Work</h2>
+    {{ range $cv.internships }}
+    <div class="cv-entry">
+      <div class="cv-entry-main">{{ with .role }}<strong>{{ . }}</strong>, {{ end }}{{ .organization }}</div>
+      <div class="cv-entry-date">{{ replace .period "--" "&ndash;" | safeHTML }}</div>
+    </div>
+    {{ end }}
+
+    <!-- Skills -->
+    <h2 class="cv-section-title">Skills</h2>
+    <p><strong>Technical:</strong> {{ delimit $cv.skills.technical ", " }}</p>
+    <p><strong>Languages:</strong>
+      {{ range $i, $lang := $cv.skills.languages }}{{ if $i }};{{ end }} {{ $lang.language }} ({{ $lang.proficiency }}){{ end }}
+    </p>
+    <p><strong>Courses:</strong></p>
+    <ul class="cv-skill-list">
+      {{ range $cv.skills.courses }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+
+    <!-- Fieldwork -->
+    <h2 class="cv-section-title">Fieldwork</h2>
+    <p><strong>India:</strong> {{ delimit $cv.fieldwork.india ", " }}</p>
+    <p><strong>Outside India:</strong> {{ delimit $cv.fieldwork.outside_india ", " }}</p>
+  </div>
+</section>
+{{ end }}

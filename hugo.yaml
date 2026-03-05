@@ -1,0 +1,42 @@
+baseURL: "https://www.apurvabamezai.com/"
+languageCode: "en-us"
+title: "Apurva Bamezai"
+
+# Disable default Hugo taxonomies (we don't need tags/categories)
+taxonomies: {}
+
+# Menu items — appear in the navigation bar
+menus:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Research
+      url: /research/
+      weight: 2
+    - name: CV
+      url: /cv/
+      weight: 3
+    - name: Teaching
+      url: /teaching/
+      weight: 4
+    - name: News
+      url: /news/
+      weight: 5
+
+# Build settings
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allow raw HTML in markdown
+  highlight:
+    style: github
+
+# Pagination for news section
+pagination:
+  pagerSize: 10
+
+# Parameters accessible in templates via .Site.Params
+params:
+  description: "Apurva Bamezai — Postdoctoral Fellow, Kellogg Institute, University of Notre Dame"
+  author: "Apurva Bamezai"

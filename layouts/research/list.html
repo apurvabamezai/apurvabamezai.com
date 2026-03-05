@@ -1,0 +1,85 @@
+{{ define "main" }}
+{{ $cv := .Site.Data.cv }}
+
+<section class="section page-section">
+  <div class="container">
+    <h1 class="page-title">Research</h1>
+
+    <!-- Research Fields -->
+    <div class="field-tags" style="margin-bottom: 2.5rem;">
+      {{ range $cv.research_fields }}
+      <span class="field-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+
+    <!-- Peer-Reviewed -->
+    <h2 class="subsection-title">Peer-Reviewed Articles</h2>
+    <ol class="publication-list" reversed>
+      {{ range $cv.publications.peer_reviewed }}
+      <li class="publication-item">
+        <div class="pub-text">
+          <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+          {{ .title }}.
+          <em>{{ .journal }}</em>{{ with .volume }}, {{ . }}{{ end }}{{ with .year }}, {{ . }}{{ end }}.
+          {{ with .status }}<span class="pub-status">({{ . }})</span>{{ end }}
+        </div>
+        <div class="pub-links">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Paper</a>{{ end }}
+        </div>
+        {{ with .abstract }}
+        <div class="pub-abstract-toggle">
+          <button class="abstract-btn" aria-expanded="false">Abstract <span class="arrow">&raquo;</span></button>
+          <div class="pub-abstract" hidden>
+            <p>{{ . }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <!-- Works in Progress -->
+    <h2 class="subsection-title">Works in Progress / Under Review</h2>
+    <ol class="publication-list" reversed>
+      {{ range $cv.publications.works_in_progress }}
+      <li class="publication-item">
+        <div class="pub-text">
+          <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+          {{ .title }}.
+          {{ with .status }}<span class="pub-status">{{ . }}.</span>{{ end }}
+        </div>
+        <div class="pub-links">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Paper</a>{{ end }}
+        </div>
+        {{ with .abstract }}
+        <div class="pub-abstract-toggle">
+          <button class="abstract-btn" aria-expanded="false">Abstract <span class="arrow">&raquo;</span></button>
+          <div class="pub-abstract" hidden>
+            <p>{{ . }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ol>
+
+    <!-- Policy Writing -->
+    <h2 class="subsection-title">Select Policy Writing</h2>
+    <ol class="publication-list" reversed>
+      {{ range $cv.publications.policy_writing }}
+      <li class="publication-item">
+        <div class="pub-text">
+          <span class="pub-authors">{{ .authors | replaceRE "Bamezai, Apurva|Apurva Bamezai" "<strong>Apurva Bamezai</strong>" | safeHTML }}</span>.
+          {{ .title }}.
+          <em>{{ .venue }}</em>, {{ .year }}.
+          {{ with .note }}<span class="pub-note">{{ . }}</span>{{ end }}
+        </div>
+        <div class="pub-links">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">Link</a>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
